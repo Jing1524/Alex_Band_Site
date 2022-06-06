@@ -13,6 +13,8 @@ module.exports = {
         // sans: ["Proxima Nova", ...defaultTheme.fontFamily.sans],
         metropolis: ["Metropolis", "sans-serif"],
         jost: ["Jost", "sans-serif"],
+        Cinzel: ["Cinzel Decorative", "cursive"],
+        Aleo: ["Aleo", "serif"],
       },
       screens: {
         "3xl": "1792px",
