@@ -7,7 +7,7 @@ function Header(): JSX.Element {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
   return (
-    <section className="flex items-center pt-10 justify-end pr-10">
+    <section className="flex items-center pt-10 justify-end pr-10 w-[100vw] m-auto 2xl:w-[90vw] 4xl:w-[80vw]">
       <motion.div
         className=" w-[40px] h-auto max-w-[40px] hover:cursor-pointer"
         onClick={() => setIsActive(!isActive)}
@@ -22,7 +22,7 @@ function Header(): JSX.Element {
       </motion.div>
 
       <button
-        className="flex items-center justify-center space-x-2 opacity-100 group ml-5"
+        className="flex items-center justify-center ml-5 space-x-2 opacity-100 group"
         onClick={() => setNavbarOpen(!navbarOpen)}
       >
         <div
