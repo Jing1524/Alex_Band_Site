@@ -32,7 +32,7 @@ function AudioControls({
         >
           <div className="w-[24px] h-[24px] m-auto">
             <Image
-              src="/icon/play.svg"
+              src="/icon/stop.svg"
               layout="responsive"
               height={24}
               width={24}
@@ -47,7 +47,7 @@ function AudioControls({
         >
           <div className="w-[24px] h-[24px] m-auto">
             <Image
-              src="/icon/stop.svg"
+              src="/icon/play.svg"
               layout="responsive"
               height={24}
               width={24}
