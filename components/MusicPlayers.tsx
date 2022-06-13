@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import classNames from "classnames";
-import AudioControls from "./AudioControls";
+import AudioControls from "./audioControls";
+import { SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG } from "constants";
 
 function MusicPlayers({ tracks }): JSX.Element {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -13,7 +14,6 @@ function MusicPlayers({ tracks }): JSX.Element {
   const { title, artist, audioSrc } = tracks[trackIndex];
 
   // can't run Audio API on server
-  // const [audio, setAudio] = useState(null)
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -23,9 +23,8 @@ function MusicPlayers({ tracks }): JSX.Element {
     };
   }, []);
 
-  const intervalRef = useRef();
+  const intervalRef = useRef(0);
   const isReady = useRef(false);
-  console.log(duration);
 
   const toPrevTrack = () => {
     if (trackIndex - 1 < 0) {
@@ -58,11 +57,14 @@ function MusicPlayers({ tracks }): JSX.Element {
   useEffect(() => {
     if (isPlaying) {
       audioRef.current.play();
+      startTimer(); //keep track of the progress
     } else {
+      clearInterval(intervalRef.current);
       audioRef.current.pause();
     }
   }, [isPlaying]);
   console.log(audioRef);
+
   useEffect(() => {
     // Pause and clean up on unmount
     return () => {
@@ -84,21 +86,68 @@ function MusicPlayers({ tracks }): JSX.Element {
       isReady.current = true;
     }
   }, [trackIndex]);
+  console.log(trackProgress);
 
+  //progress bar dragging
+  const onScrub = (value) => {
+    //clear any timers that are already running
+    clearInterval(intervalRef.current);
+    audioRef.current.currentTime = value;
+    setTrackProgress(audioRef.current.currentTime);
+  };
+
+  const onScrubEnd = () => {
+    if (!isPlaying) {
+      setIsPlaying(true);
+    }
+    startTimer();
+  };
+
+  const currentPercentage = duration
+    ? `${(trackProgress / duration) * 100}%`
+    : "0%";
+  const trackStyling = `
+  -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #fff), color-stop(${currentPercentage}, #777))
+`;
+  console.log(trackStyling);
   return (
     <section className="bg-gradient-to-r from-slate-300 to-blue-500 h-[100vh]">
-      <motion.div className="ml-28 rounded w-[40%] h-[1000px] bg-white shadow-xl sm:rounded-3xl sm:p-20 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-drop-sm">
+      <motion.div className="ml-28 rounded w-[40%] h-[1000px] bg-white shadow-xl sm:rounded-3xl pt-10 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-sm">
         {/* button control */}
-        <div className="flex flex-col items-center mt-5 mb-10 track-info">
-          <h2>{title}</h2>
-          <h3>{artist}</h3>
+        <div className="p-8 mx-20 border border-gray-300 shadow-xl rounded-xl">
+          <div className="flex flex-col items-center mt-5 mb-10 track-info">
+            <h2>{title}</h2>
+            <h3>{artist}</h3>
+          </div>
+          <AudioControls
+            isPlaying={isPlaying}
+            onPrevClick={toPrevTrack}
+            onNextClick={toNextTrack}
+            onPlayPauseClick={setIsPlaying}
+          />
+          <input
+            type="range"
+            value={trackProgress}
+            step="1"
+            min="0"
+            max={duration ? duration : `${duration}`}
+            className="progress w-[100%] mt-10 rounded-lg bg-red-300"
+            onChange={(e) => onScrub(e.target.value)}
+            onMouseUp={onScrubEnd}
+            onKeyUp={onScrubEnd}
+            style={{ background: trackStyling }}
+          />
         </div>
-        <AudioControls
-          isPlaying={isPlaying}
-          onPrevClick={toPrevTrack}
-          onNextClick={toNextTrack}
-          onPlayPauseClick={setIsPlaying}
-        />
+        <div className="mt-10">
+          {tracks.map((track, index) => {
+            return (
+              <div className="px-8 py-6 mx-10 mb-4 border border-gray-300 shadow-xl rounded-xl">
+                <div className="" />
+                <h2 className="ml-10">{track.title}</h2>
+              </div>
+            );
+          })}
+        </div>
       </motion.div>
     </section>
   );

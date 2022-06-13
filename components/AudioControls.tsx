@@ -28,7 +28,7 @@ function AudioControls({
         <button
           type="button"
           onClick={() => onPlayPauseClick(false)}
-          className="w-16 h-16 transition duration-150 ease-out bg-green-200 rounded-full group hover:scale-[1.2]"
+          className="w-16 h-16 transition duration-150 ease-out bg-slate-300 rounded-full group hover:scale-[1.2]"
         >
           <div className="w-[24px] h-[24px] m-auto">
             <Image
@@ -43,7 +43,7 @@ function AudioControls({
         <button
           type="button"
           onClick={() => onPlayPauseClick(true)}
-          className="w-16 h-16 transition duration-150 ease-out bg-green-200 rounded-full group hover:scale-[1.2]"
+          className="w-16 h-16 transition duration-150 ease-out bg-slate-300 rounded-full group hover:scale-[1.2]"
         >
           <div className="w-[24px] h-[24px] m-auto">
             <Image
