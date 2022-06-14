@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import classNames from "classnames";
-import AudioControls from "./audioControls";
-import { SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG } from "constants";
+import AudioControls from "./AudioControls";
 
 function MusicPlayers({ tracks }): JSX.Element {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -11,17 +10,25 @@ function MusicPlayers({ tracks }): JSX.Element {
   const [trackProgress, setTrackProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  const { title, artist, audioSrc } = tracks[trackIndex];
+  const { title, artist, audioSrc, durationTime } = tracks[trackIndex];
 
   // can't run Audio API on server
   const audioRef = useRef(null);
 
   useEffect(() => {
     audioRef.current = new Audio(audioSrc);
-    audioRef.current.onloadeddata = () => {
-      setDuration(audioRef.current.duration);
-    };
-  }, []);
+    const seconds = Math.floor(audioRef.current.duration);
+    setDuration(seconds);
+  }, [audioRef?.current?.onloadedata, audioRef?.current?.isReady]);
+
+  //convert milliseconds to min and secs
+  const calculateTime = (secs) => {
+    const minutes = Math.floor(secs / 60);
+    const returnedMinutes = minutes < 10 ? `${minutes}` : `${minutes}`;
+    const seconds = Math.floor(secs & 60);
+    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    return `${returnedMinutes}:${returnedSeconds}`;
+  };
 
   const intervalRef = useRef(0);
   const isReady = useRef(false);
@@ -56,19 +63,18 @@ function MusicPlayers({ tracks }): JSX.Element {
 
   useEffect(() => {
     if (isPlaying) {
-      audioRef.current.play();
+      audioRef?.current?.play();
       startTimer(); //keep track of the progress
     } else {
       clearInterval(intervalRef.current);
-      audioRef.current.pause();
+      audioRef?.current?.pause();
     }
   }, [isPlaying]);
-  console.log(audioRef);
 
   useEffect(() => {
     // Pause and clean up on unmount
     return () => {
-      audioRef.current.pause();
+      audioRef?.current?.pause();
       clearInterval(intervalRef.current);
     };
   }, []);
@@ -86,7 +92,6 @@ function MusicPlayers({ tracks }): JSX.Element {
       isReady.current = true;
     }
   }, [trackIndex]);
-  console.log(trackProgress);
 
   //progress bar dragging
   const onScrub = (value) => {
@@ -103,13 +108,6 @@ function MusicPlayers({ tracks }): JSX.Element {
     startTimer();
   };
 
-  const currentPercentage = duration
-    ? `${(trackProgress / duration) * 100}%`
-    : "0%";
-  const trackStyling = `
-  -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #fff), color-stop(${currentPercentage}, #777))
-`;
-  console.log(trackStyling);
   return (
     <section className="bg-gradient-to-r from-slate-300 to-blue-500 h-[100vh]">
       <motion.div className="ml-28 rounded w-[40%] h-[1000px] bg-white shadow-xl sm:rounded-3xl pt-10 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-sm">
@@ -125,25 +123,40 @@ function MusicPlayers({ tracks }): JSX.Element {
             onNextClick={toNextTrack}
             onPlayPauseClick={setIsPlaying}
           />
-          <input
-            type="range"
-            value={trackProgress}
-            step="1"
-            min="0"
-            max={duration ? duration : `${duration}`}
-            className="progress w-[100%] mt-10 rounded-lg bg-red-300"
-            onChange={(e) => onScrub(e.target.value)}
-            onMouseUp={onScrubEnd}
-            onKeyUp={onScrubEnd}
-            style={{ background: trackStyling }}
-          />
+          <div>
+            <input
+              type="range"
+              value={trackProgress}
+              step="0.1"
+              min="0"
+              max={duration ? duration : `${duration}`}
+              className=" progress w-[100%] mt-10 rounded-lg bg-red-300 inline"
+              onChange={(e) => onScrub(e.target.value)}
+              onMouseUp={onScrubEnd}
+              onKeyUp={onScrubEnd}
+              // style={{ background: trackStyling }}
+            />
+            {audioRef?.current?.duration ? (
+              <p className="block float-right text-xs">
+                {`${calculateTime(
+                  audioRef?.current?.currentTime
+                )}/-${calculateTime(audioRef?.current?.duration)}`}
+              </p>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
         <div className="mt-10">
           {tracks.map((track, index) => {
             return (
-              <div className="px-8 py-6 mx-10 mb-4 border border-gray-300 shadow-xl rounded-xl">
-                <div className="" />
-                <h2 className="ml-10">{track.title}</h2>
+              <div
+                key={index}
+                className="flex items-center px-8 py-6 mx-10 mb-4 border border-gray-300 shadow-xl rounded-xl"
+              >
+                <div className="w-0 h-10 ml-8 border border-gray-300 border-solid" />
+                <h2 className="flex ml-5 grow">{track.title}</h2>
+                <p>{track.durationTime}</p>
               </div>
             );
           })}
