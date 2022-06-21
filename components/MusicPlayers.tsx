@@ -109,59 +109,81 @@ function MusicPlayers({ tracks }): JSX.Element {
   };
 
   return (
-    <section className="bg-gradient-to-r from-slate-300 to-blue-500 h-[100vh]">
-      <motion.div className="ml-28 rounded w-[40%] h-[1000px] bg-white shadow-xl sm:rounded-3xl pt-10 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-sm">
-        {/* button control */}
-        <div className="p-8 mx-20 border border-gray-300 shadow-xl rounded-xl">
-          <div className="flex flex-col items-center mt-5 mb-10 track-info">
-            <h2>{title}</h2>
-            <h3>{artist}</h3>
-          </div>
-          <AudioControls
-            isPlaying={isPlaying}
-            onPrevClick={toPrevTrack}
-            onNextClick={toNextTrack}
-            onPlayPauseClick={setIsPlaying}
+    <section className="bg-gradient-to-r from-[#171717] to-black/90 h-[100vh]">
+      <div className="flex items-center justify-center">
+        <div className="w-[70vw]">
+          <Image
+            src="/image/track_photo.jpg"
+            layout="responsive"
+            height={1500}
+            width={1500}
           />
-          <div>
-            <input
-              type="range"
-              value={trackProgress}
-              step="0.1"
-              min="0"
-              max={duration ? duration : `${duration}`}
-              className=" progress w-[100%] mt-10 rounded-lg bg-red-300 inline"
-              onChange={(e) => onScrub(e.target.value)}
-              onMouseUp={onScrubEnd}
-              onKeyUp={onScrubEnd}
-              // style={{ background: trackStyling }}
+        </div>
+        <motion.div className=" w-[40%]">
+          {/* button control */}
+          <div className="p-8 mx-20">
+            <div className="flex flex-col items-center mt-5 mb-10 track-info">
+              <h2 className="text-xl font-bold text-white/40 font-raleway">
+                {title}
+              </h2>
+              <h3 className="text-xl font-bold text-white/40 font-raleway">
+                {artist}
+              </h3>
+            </div>
+            <AudioControls
+              isPlaying={isPlaying}
+              onPrevClick={toPrevTrack}
+              onNextClick={toNextTrack}
+              onPlayPauseClick={setIsPlaying}
             />
-            {audioRef?.current?.duration ? (
-              <p className="block float-right text-xs">
-                {`${calculateTime(
-                  audioRef?.current?.currentTime
-                )}/-${calculateTime(audioRef?.current?.duration)}`}
-              </p>
-            ) : (
-              ""
-            )}
+            <div>
+              <input
+                type="range"
+                value={trackProgress}
+                step="0.1"
+                min="0"
+                max={duration ? duration : `${duration}`}
+                className=" progress w-[100%] mt-10 rounded-lg bg-red-300 inline"
+                onChange={(e) => onScrub(e.target.value)}
+                onMouseUp={onScrubEnd}
+                onKeyUp={onScrubEnd}
+                // style={{ background: trackStyling }}
+              />
+              {audioRef?.current?.duration ? (
+                <p className="block float-right text-xs font-bold text-white/40 font-raleway">
+                  {`${calculateTime(
+                    audioRef?.current?.currentTime
+                  )}/-${calculateTime(audioRef?.current?.duration)}`}
+                </p>
+              ) : (
+                ""
+              )}
+            </div>
           </div>
-        </div>
-        <div className="mt-10">
-          {tracks.map((track, index) => {
-            return (
-              <div
-                key={index}
-                className="flex items-center px-8 py-6 mx-10 mb-4 border border-gray-300 shadow-xl rounded-xl"
-              >
-                <div className="w-0 h-10 ml-8 border border-gray-300 border-solid" />
-                <h2 className="flex ml-5 grow">{track.title}</h2>
-                <p>{track.durationTime}</p>
-              </div>
-            );
-          })}
-        </div>
-      </motion.div>
+          <div className="mt-10">
+            {tracks.map((track, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex items-center px-8 py-4 mx-10 mb-4 bg-white shadow-xl rounded-xl bg-opacity-40 bg-clip-padding backdrop-blur-sm hover:bg-opacity-60"
+                >
+                  <button className="text-[24px] text-white/40">
+                    <i className="fas">&#xf026;</i>
+                  </button>
+
+                  <div className="w-0 h-10 ml-8 border border-solid border-white/40" />
+                  <h2 className="flex ml-5 text-xl font-bold grow text-white/40 font-raleway">
+                    {track.title}
+                  </h2>
+                  <p className="text-base font-bold text-white/40 font-raleway">
+                    {track.durationTime}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

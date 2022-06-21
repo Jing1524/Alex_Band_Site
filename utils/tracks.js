@@ -17,4 +17,34 @@ export default [
     audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
     durationTime: "03:16",
   },
+  {
+    title: "I will Be Seeing You",
+    artist: "Billie Holiday",
+    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
+    durationTime: "03:16",
+  },
+  {
+    title: "I will Be Seeing You",
+    artist: "Billie Holiday",
+    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
+    durationTime: "03:16",
+  },
+  {
+    title: "I will Be Seeing You",
+    artist: "Billie Holiday",
+    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
+    durationTime: "03:16",
+  },
+  {
+    title: "I will Be Seeing You",
+    artist: "Billie Holiday",
+    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
+    durationTime: "03:16",
+  },
+  {
+    title: "I will Be Seeing You",
+    artist: "Billie Holiday",
+    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
+    durationTime: "03:16",
+  },
 ];

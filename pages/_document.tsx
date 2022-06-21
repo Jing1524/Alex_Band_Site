@@ -75,6 +75,26 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Jost:wght@400;700&display=swap"
             rel="stylesheet"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@600&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+            rel="stylesheet"
+          />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
@@ -104,6 +124,11 @@ export default class MyDocument extends Document {
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           />
           <link rel="manifest" href="/manifest.json" />
+
+          <script
+            src="https://kit.fontawesome.com/a076d05399.js"
+            crossOrigin="anonymous"
+          />
           {/* GOOGLE ANALYTICS */}
 
           {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWLG1SCQBE" />
