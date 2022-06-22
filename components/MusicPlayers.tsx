@@ -109,7 +109,7 @@ function MusicPlayers({ tracks }): JSX.Element {
   };
 
   return (
-    <section className="bg-gradient-to-r from-[#171717] to-black/90 h-[100vh]">
+    <section className="bg-gradient-to-r from-[#171717] to-black/90 pt-16">
       <div className="flex items-center justify-center">
         <div className="w-[70vw]">
           <Image

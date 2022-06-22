@@ -4,14 +4,14 @@ import { motion, AnimatePresence, useCycle } from "framer-motion";
 import classNames from "classnames";
 import AudioControls from "./AudioControls";
 
-function About({}): JSX.Element {
+function About(): JSX.Element {
   return (
-    <section className="bg-gradient-to-r from-[#171717] to-black/90 h-[100vh] w-[100vw] flex">
-      <div className="flex flex-col basis-1/2">
+    <section className="bg-gradient-to-r from-[#171717] to-black/90 flex items-center space-x-10 py-16">
+      <div className="flex flex-col ml-16 basis-1/2">
         <h1 className="text-6xl uppercase text-white/60 text-semibold font-raleway">
           about the project
         </h1>
-        <p className="text-3xl text-white/60 font-raleway max-w-[100%] mt-14">
+        <p className="text-3xl text-white/60 font-raleway max-w-[100%] mt-14 leading-relaxed">
           I Live Dreaming is an album of collaboratively interpreted American
           standards and original compositions. Since meeting in New York City
           nearly a decade ago, pianist Russell Kranes, bassist Sam Weber,

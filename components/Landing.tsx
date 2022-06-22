@@ -7,7 +7,7 @@ function Landing(): JSX.Element {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
   return (
-    <section className="absolute flex flex-col top-[75%] items-left ml-32">
+    <section className="absolute flex flex-col top-[75%] items-left ml-32 ">
       <h1 className="z-10 font-bold text-gray-200 text-8xl font-raleway">
         I LIVE DREAMING
       </h1>
