@@ -17,14 +17,14 @@ function Header(): JSX.Element {
         id="navbar"
       >
         <ul
-          className={classNames("flex space-x-10 mt-14 mr-32 flex-end")}
+          className={classNames("flex space-x-10 mt-10 mr-32 flex-end")}
           // className={classNames(
           //   "flex flex-col items-center space-y-10 sm:space-y-20 mb-[250px] lg:mb-0 lg:space-y-0 lg:flex-row list-none lg:ml-auto",
           //   navbarOpen && "flex-grow lg:grow-0"
           // )}
         >
           <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
-            <li className="flex items-center nav-item">
+            <li className="flex flex-col items-center nav-item">
               <a
                 // className="pl-2 pr-9 py-2 flex items-center uppercase font-normal font-metropolis text-xl lg:text-base leading-snug text-[#17015B] group-hover:font-bold"
                 className="z-10 text-2xl font-bold text-gray-200 font-raleway"
@@ -33,10 +33,18 @@ function Header(): JSX.Element {
               >
                 TRACKS
               </a>
+              <div className="w-[100px] invisible group-hover:visible">
+                <Image
+                  src="/icon/stroke.svg"
+                  layout="responsive"
+                  height={30}
+                  width={150}
+                />
+              </div>
             </li>
           </motion.div>
           <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
-            <li className="flex items-center nav-item">
+            <li className="flex flex-col items-center nav-item">
               <a
                 // className="pl-2 pr-9 py-2 flex items-center uppercase font-normal font-metropolis text-xl lg:text-base leading-snug text-[#17015B] group-hover:font-bold"
                 className="z-10 text-2xl font-bold text-gray-200 font-raleway "
@@ -45,19 +53,35 @@ function Header(): JSX.Element {
               >
                 ABOUT
               </a>
+              <div className="w-[100px] invisible group-hover:visible">
+                <Image
+                  src="/icon/stroke.svg"
+                  layout="responsive"
+                  height={30}
+                  width={150}
+                />
+              </div>
             </li>
           </motion.div>
 
           <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
-            <li className="flex items-center nav-item">
+            <li className="flex flex-col items-center nav-item">
               <a
                 // className="pl-2 pr-9 py-2 flex items-center uppercase font-normal font-metropolis text-xl lg:text-base leading-snug text-[#17015B] group-hover:font-bold"
                 className="z-10 text-2xl font-bold text-gray-200 font-raleway "
-                href="#contack"
+                href="#contact"
                 onClick={() => setNavbarOpen(false)}
               >
                 CONTACT
               </a>
+              <div className="w-[100px] invisible group-hover:visible">
+                <Image
+                  src="/icon/stroke.svg"
+                  layout="responsive"
+                  height={30}
+                  width={150}
+                />
+              </div>
             </li>
           </motion.div>
         </ul>
