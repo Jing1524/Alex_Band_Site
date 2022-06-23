@@ -109,7 +109,10 @@ function MusicPlayers({ tracks }): JSX.Element {
   };
 
   return (
-    <section className="bg-gradient-to-r from-[#171717] to-black/90 pt-16">
+    <section
+      id="tracks"
+      className="bg-gradient-to-r from-[#171717]/90 to-black/90 pt-16"
+    >
       <div className="flex items-center justify-center">
         <div className="w-[70vw]">
           <Image
@@ -123,10 +126,10 @@ function MusicPlayers({ tracks }): JSX.Element {
           {/* button control */}
           <div className="p-8 mx-20">
             <div className="flex flex-col items-center mt-5 mb-10 track-info">
-              <h2 className="text-xl font-bold text-white/40 font-raleway">
+              <h2 className="text-xl font-bold text-white/80 font-raleway">
                 {title}
               </h2>
-              <h3 className="text-xl font-bold text-white/40 font-raleway">
+              <h3 className="text-xl font-bold text-white/80 font-raleway">
                 {artist}
               </h3>
             </div>
@@ -150,7 +153,7 @@ function MusicPlayers({ tracks }): JSX.Element {
                 // style={{ background: trackStyling }}
               />
               {audioRef?.current?.duration ? (
-                <p className="block float-right text-xs font-bold text-white/40 font-raleway">
+                <p className="block float-right text-xs font-bold text-white/80 font-raleway">
                   {`${calculateTime(
                     audioRef?.current?.currentTime
                   )}/-${calculateTime(audioRef?.current?.duration)}`}
@@ -167,15 +170,15 @@ function MusicPlayers({ tracks }): JSX.Element {
                   key={index}
                   className="flex items-center px-8 py-4 mx-10 mb-4 bg-white shadow-xl rounded-xl bg-opacity-40 bg-clip-padding backdrop-blur-sm hover:bg-opacity-60"
                 >
-                  <button className="text-[24px] text-white/40">
+                  <button className="text-[24px] text-white/60">
                     <i className="fas">&#xf026;</i>
                   </button>
 
-                  <div className="w-0 h-10 ml-8 border border-solid border-white/40" />
-                  <h2 className="flex ml-5 text-xl font-bold grow text-white/40 font-raleway">
+                  <div className="w-0 h-10 ml-8 border border-solid border-white/60" />
+                  <h2 className="flex ml-5 text-xl font-bold grow text-white/60 font-raleway">
                     {track.title}
                   </h2>
-                  <p className="text-base font-bold text-white/40 font-raleway">
+                  <p className="text-base font-bold text-white/60 font-raleway">
                     {track.durationTime}
                   </p>
                 </div>

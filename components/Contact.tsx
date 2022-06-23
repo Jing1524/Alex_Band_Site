@@ -6,7 +6,10 @@ import AudioControls from "./AudioControls";
 
 function Contact(): JSX.Element {
   return (
-    <section className="bg-gradient-to-r from-[#171717] to-black/90 flex items-start space-x-10 py-16">
+    <section
+      id="contact"
+      className="bg-gradient-to-r from-[#171717] to-black/90 flex items-start space-x-10 py-16"
+    >
       <div className="w-[100vw] basis-3/5">
         <Image
           src="/image/contact.jpg"
