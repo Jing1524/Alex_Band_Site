@@ -108,21 +108,26 @@ function MusicPlayers({ tracks }): JSX.Element {
     startTimer();
   };
 
+  const handlePlay = (index) => {
+    console.log("clicked index", index);
+    setIsPlaying(true);
+  };
+
   return (
     <section
       id="tracks"
-      className="bg-gradient-to-r from-[#171717]/90 to-black/90 pt-16"
+      className="bg-gradient-to-r from-[#171717] to-black/90 py-16"
     >
-      <div className="flex items-center justify-center">
-        <div className="w-[70vw]">
+      <div className="flex items-end justify-center">
+        {/* <div className="w-[50vw] mb-4">
           <Image
             src="/image/track_photo.jpg"
             layout="responsive"
             height={1500}
             width={1500}
           />
-        </div>
-        <motion.div className=" w-[40%]">
+        </div> */}
+        <motion.div className=" w-[60%]">
           {/* button control */}
           <div className="p-8 mx-20">
             <div className="flex flex-col items-center mt-5 mb-10 track-info">
@@ -153,10 +158,10 @@ function MusicPlayers({ tracks }): JSX.Element {
                 // style={{ background: trackStyling }}
               />
               {audioRef?.current?.duration ? (
-                <p className="block float-right text-xs font-bold text-white/80 font-raleway">
+                <p className="block float-right text-xs font-bold text-white/80 font-PT_sans">
                   {`${calculateTime(
                     audioRef?.current?.currentTime
-                  )}/-${calculateTime(audioRef?.current?.duration)}`}
+                  )}/-${durationTime}`}
                 </p>
               ) : (
                 ""
@@ -170,15 +175,31 @@ function MusicPlayers({ tracks }): JSX.Element {
                   key={index}
                   className="flex items-center px-8 py-4 mx-10 mb-4 bg-white shadow-xl rounded-xl bg-opacity-40 bg-clip-padding backdrop-blur-sm hover:bg-opacity-60"
                 >
-                  <button className="text-[24px] text-white/60">
-                    <i className="fas">&#xf026;</i>
-                  </button>
+                  {isPlaying ? (
+                    <button
+                      id={index}
+                      type="button"
+                      onClick={() => handlePlay(index)}
+                      className="text-[24px] text-white/40 hover:text-white/80"
+                    >
+                      <i className="fas">&#xf04c;</i>
+                    </button>
+                  ) : (
+                    <button
+                      id={index}
+                      type="button"
+                      onClick={() => handlePlay(index)}
+                      className="text-[24px] text-white/40 hover:text-white/80"
+                    >
+                      <i className="fas">&#xf04b;</i>
+                    </button>
+                  )}
 
                   <div className="w-0 h-10 ml-8 border border-solid border-white/60" />
                   <h2 className="flex ml-5 text-xl font-bold grow text-white/60 font-raleway">
                     {track.title}
                   </h2>
-                  <p className="text-base font-bold text-white/60 font-raleway">
+                  <p className="text-base font-bold text-white/60 font-PT_sans">
                     {track.durationTime}
                   </p>
                 </div>
