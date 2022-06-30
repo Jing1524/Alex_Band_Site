@@ -9,14 +9,12 @@ function MusicPlayers({ tracks }): JSX.Element {
   const [trackIndex, setTrackIndex] = useState(0);
   const [trackProgress, setTrackProgress] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [currentTrack, setCurrentTrack] = useState();
-  const { title, artist, audioSrc, durationTime } = tracks[trackIndex];
 
   // can't run Audio API on server
   const audioRef = useRef(null);
 
   useEffect(() => {
-    audioRef.current = new Audio(audioSrc);
+    audioRef.current = new Audio(tracks[trackIndex].audioSrc);
     const seconds = Math.floor(audioRef.current.duration);
     setDuration(seconds);
   }, [audioRef?.current?.onloadedata, audioRef?.current?.isReady]);
@@ -83,6 +81,14 @@ function MusicPlayers({ tracks }): JSX.Element {
     });
   };
 
+  const playlistSelectionHandler = (e) => {
+    const num = Number(e.currentTarget.getAttribute("data-key"));
+    // console.log("selected", num);
+    // const selectedIdx = tracks.indexOf(num);
+    setTrackIndex(num);
+    setIsPlaying(true);
+  };
+
   return (
     <section
       id="tracks"
@@ -100,6 +106,7 @@ function MusicPlayers({ tracks }): JSX.Element {
         <motion.div className=" w-[60%]">
           {/* button control */}
           <CurrentTrack
+            title={tracks[trackIndex].title}
             audioRef={audioRef}
             tracks={tracks}
             setIsPlaying={setIsPlaying}
@@ -110,8 +117,8 @@ function MusicPlayers({ tracks }): JSX.Element {
             onScrub={onScrub}
             calculateTime={calculateTime}
             trackIndex={trackIndex}
-            audioSrc={audioSrc}
-            durationTime={durationTime}
+            audioSrc={tracks[trackIndex].audioSrc}
+            durationTime={tracks[trackIndex].durationTime}
             intervalRef={intervalRef}
           />
           <div className="mt-10">
@@ -119,8 +126,16 @@ function MusicPlayers({ tracks }): JSX.Element {
               return (
                 <div
                   key={index}
+                  data-key={index}
+                  onClick={playlistSelectionHandler}
                   className="flex items-center px-8 py-4 mx-10 mb-4 bg-white shadow-xl rounded-xl bg-opacity-40 bg-clip-padding backdrop-blur-sm hover:bg-opacity-60"
                 >
+                  <button
+                    type="button"
+                    className="w-16 h-16 transition duration-150 ease-out group hover:scale-[1.2] text-[24px] text-white/40 hover:text-white/80"
+                  >
+                    <i className="fas">&#xf04b;</i>
+                  </button>
                   <div className="w-0 h-10 ml-8 border border-solid border-white/60" />
                   <h2 className="flex ml-5 text-xl font-bold grow text-white/60 font-raleway">
                     {track.title}

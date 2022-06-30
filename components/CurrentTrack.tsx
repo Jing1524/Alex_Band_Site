@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 function CurrentTrack({
+  title,
   tracks,
   toPrevTrack,
   toNextTrack,
@@ -67,10 +68,10 @@ function CurrentTrack({
 
   return (
     <div className="p-8 mx-20">
-      <div className="flex flex-col items-center mt-5 mb-10 track-info">
-        <h2 className="text-xl font-bold text-white/80 font-raleway">test</h2>
-        <h3 className="text-xl font-bold text-white/80 font-raleway">test </h3>
-      </div>
+      <h2 className="text-xl font-bold text-center text-white/80 font-raleway">
+        {title}
+      </h2>
+
       <div className="flex items-center justify-center space-x-5">
         <button
           type="button"
