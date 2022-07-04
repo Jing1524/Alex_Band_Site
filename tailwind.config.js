@@ -17,6 +17,7 @@ module.exports = {
         Aleo: ["Aleo", "serif"],
         vadodara: ["Hind Vadodara", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
+        PT_sans: ["PT Sans", "sans-serif"],
       },
       screens: {
         "3xl": "1792px",

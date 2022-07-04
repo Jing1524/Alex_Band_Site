@@ -1,50 +1,50 @@
 export default [
   {
-    title: "My one and only love",
-    artist: "Coltrane",
-    audioSrc: "/tracks/My_One_And_Only_Love_(getmp3.pro).mp3",
-    durationTime: "04:36",
+    title: "Vivo Sonhando",
+
+    audioSrc: "/tracks/Vivo_Sonhando.mp3",
+    durationTime: "06:38",
   },
   {
-    title: "In A Sentimental Mood",
-    artist: "Duke Ellington",
-    audioSrc: "/tracks/In_A_Sentimental_Mood_(getmp3.pro).mp3",
-    durationTime: "04:60",
+    title: "Feint",
+
+    audioSrc: "/tracks/Feint.mp3",
+    durationTime: "05:56",
   },
   {
-    title: "I will Be Seeing You",
-    artist: "Billie Holiday",
-    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
-    durationTime: "03:16",
+    title: "Old Folks",
+
+    audioSrc: "/tracks/Old_Folks.mp3",
+    durationTime: "05:32",
   },
   {
-    title: "I will Be Seeing You",
-    artist: "Billie Holiday",
-    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
-    durationTime: "03:16",
+    title: "Giant Steps Minor",
+
+    audioSrc: "/tracks/Giant_Steps_Minor.mp3",
+    durationTime: "07:42",
   },
   {
-    title: "I will Be Seeing You",
-    artist: "Billie Holiday",
-    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
-    durationTime: "03:16",
+    title: "I'll Get By",
+
+    audioSrc: "/tracks/I'll_Get_By.mp3",
+    durationTime: "06:16",
   },
   {
-    title: "I will Be Seeing You",
-    artist: "Billie Holiday",
-    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
-    durationTime: "03:16",
+    title: "Two Sleepy People",
+
+    audioSrc: "/tracks/Two_Sleepy_People.mp3",
+    durationTime: "05:58",
   },
   {
-    title: "I will Be Seeing You",
-    artist: "Billie Holiday",
-    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
-    durationTime: "03:16",
+    title: "EveryBody Else But You",
+
+    audioSrc: "/tracks/Everybody_Else_but_You.mp3",
+    durationTime: "06:28",
   },
   {
-    title: "I will Be Seeing You",
-    artist: "Billie Holiday",
-    audioSrc: "/tracks/Ill_Be_Seeing_You_(getmp3.pro).mp3",
-    durationTime: "03:16",
+    title: "And So It Goes",
+
+    audioSrc: "/tracks/And_So_It_Goes.mp3",
+    durationTime: "07:06",
   },
 ];
