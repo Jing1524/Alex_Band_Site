@@ -7,8 +7,7 @@ function MusicPlayers({ tracks }): JSX.Element {
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackIndex, setTrackIndex] = useState(0);
   const [trackProgress, setTrackProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [audioLength, setAudioLength] = useState(0);
+
   // can't run Audio API on server
   const audioRef = useRef(null);
 
@@ -181,7 +180,7 @@ function MusicPlayers({ tracks }): JSX.Element {
               <input
                 type="range"
                 value={trackProgress}
-                step="1"
+                // step={0.1}
                 min="0"
                 max={tracks[trackIndex].durationTime}
                 className=" progress w-[100%] mt-10 rounded-lg bg-red-300 inline"
