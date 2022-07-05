@@ -92,6 +92,7 @@ function MusicPlayers({ tracks }): JSX.Element {
       } else {
         setTrackProgress(audioRef.current.currentTime);
       }
+      // @ts-ignore
     }, [1000]);
   };
 
