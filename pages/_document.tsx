@@ -1,5 +1,4 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
-import { GA_ID } from "../utils/environment";
 
 export default class MyDocument extends Document {
   render() {
