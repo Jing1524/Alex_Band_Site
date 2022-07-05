@@ -133,7 +133,7 @@ function MusicPlayers({ tracks }): JSX.Element {
             width={1500}
           />
         </div> */}
-        <motion.div className=" w-[60%]">
+        <motion.div className=" w-full md:w-[85%] lg:w-[60%]">
           {/* button control */}
 
           <div className="p-8 mx-20">

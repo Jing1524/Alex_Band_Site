@@ -7,85 +7,67 @@ function Header(): JSX.Element {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
   return (
-    <section className="h-[100vh] bg-[url('/image/landing.jpg')] bg-no-repeat bg-cover">
-      <div
-        className={classNames("inline-block float-right")}
-        // className={classNames(
-        //   "flex-grow lg:flex items-right float-right h-[100%]",
-        //   navbarOpen ? "flex flex-col items-center mt-20 lg:mt-0" : "hidden"
-        // )}
-        id="navbar"
-      >
-        <ul
-          className={classNames("flex space-x-10 mt-10 mr-32 flex-end")}
-          // className={classNames(
-          //   "flex flex-col items-center space-y-10 sm:space-y-20 mb-[250px] lg:mb-0 lg:space-y-0 lg:flex-row list-none lg:ml-auto",
-          //   navbarOpen && "flex-grow lg:grow-0"
-          // )}
-        >
-          <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
-            <li className="flex flex-col items-center nav-item">
-              <a
-                // className="pl-2 pr-9 py-2 flex items-center uppercase font-normal font-metropolis text-xl lg:text-base leading-snug text-[#17015B] group-hover:font-bold"
-                className="z-10 text-2xl font-bold text-gray-200 font-raleway"
-                href="#tracks"
-                onClick={() => setNavbarOpen(false)}
-              >
-                TRACKS
-              </a>
-              <div className="w-[100px] invisible group-hover:visible">
-                <Image
-                  src="/icon/stroke.svg"
-                  layout="responsive"
-                  height={30}
-                  width={150}
-                />
-              </div>
-            </li>
-          </motion.div>
-          <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
-            <li className="flex flex-col items-center nav-item">
-              <a
-                // className="pl-2 pr-9 py-2 flex items-center uppercase font-normal font-metropolis text-xl lg:text-base leading-snug text-[#17015B] group-hover:font-bold"
-                className="z-10 text-2xl font-bold text-gray-200 font-raleway "
-                href="#about"
-                onClick={() => setNavbarOpen(false)}
-              >
-                ABOUT
-              </a>
-              <div className="w-[100px] invisible group-hover:visible">
-                <Image
-                  src="/icon/stroke.svg"
-                  layout="responsive"
-                  height={30}
-                  width={150}
-                />
-              </div>
-            </li>
-          </motion.div>
+    <section id="navbar" className="bg-black opacity-[88%] 2xl:bg-opacity-0">
+      <ul className="flex justify-center pt-10 pb-5 mr-0 space-x-10 2xl:mr-32">
+        <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
+          <li className="flex flex-col items-center nav-item 2xl:block">
+            <a
+              className="z-10 text-lg font-bold text-gray-200 lg:text-2xl font-raleway"
+              href="#tracks"
+              onClick={() => setNavbarOpen(false)}
+            >
+              TRACKS
+            </a>
+            <div className="w-[100px] invisible group-hover:visible">
+              <Image
+                src="/icon/stroke.svg"
+                layout="responsive"
+                height={30}
+                width={150}
+              />
+            </div>
+          </li>
+        </motion.div>
+        <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
+          <li className="flex flex-col items-center nav-item">
+            <a
+              className="z-10 text-lg font-bold text-gray-200 lg:text-2xl font-raleway "
+              href="#about"
+              onClick={() => setNavbarOpen(false)}
+            >
+              ABOUT
+            </a>
+            <div className="w-[100px] invisible group-hover:visible">
+              <Image
+                src="/icon/stroke.svg"
+                layout="responsive"
+                height={30}
+                width={150}
+              />
+            </div>
+          </li>
+        </motion.div>
 
-          <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
-            <li className="flex flex-col items-center nav-item">
-              <a
-                // className="pl-2 pr-9 py-2 flex items-center uppercase font-normal font-metropolis text-xl lg:text-base leading-snug text-[#17015B] group-hover:font-bold"
-                className="z-10 text-2xl font-bold text-gray-200 font-raleway "
-                href="#contact"
-                onClick={() => setNavbarOpen(false)}
-              >
-                CONTACT
-              </a>
-              <div className="w-[100px] invisible group-hover:visible">
-                <Image
-                  src="/icon/stroke.svg"
-                  layout="responsive"
-                  height={30}
-                  width={150}
-                />
-              </div>
-            </li>
-          </motion.div>
-        </ul>
-      </div>
+        <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
+          <li className="flex flex-col items-center nav-item">
+            <a
+              className="z-10 text-lg font-bold text-gray-200 lg:text-2xl font-raleway "
+              href="#contact"
+              onClick={() => setNavbarOpen(false)}
+            >
+              CONTACT
+            </a>
+            <div className="w-[100px] invisible group-hover:visible">
+              <Image
+                src="/icon/stroke.svg"
+                layout="responsive"
+                height={30}
+                width={150}
+              />
+            </div>
+          </li>
+        </motion.div>
+      </ul>
 
       {/* <motion.div
         className=" w-[40px] h-auto max-w-[40px] hover:cursor-pointer"
@@ -100,7 +82,7 @@ function Header(): JSX.Element {
         />
       </motion.div> */}
 
-      <button
+      {/* <button
         className="flex items-center justify-center ml-5 space-x-2 opacity-100 group lg:hidden"
         onClick={() => setNavbarOpen(!navbarOpen)}
       >
@@ -126,7 +108,7 @@ function Header(): JSX.Element {
               : "opacity-50 group-hover:opacity-100"
           )}
         />
-      </button>
+      </button> */}
     </section>
   );
 }
