@@ -1,8 +1,4 @@
-import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence, useCycle } from "framer-motion";
-import classNames from "classnames";
-import AudioControls from "./AudioControls";
 
 function Contact(): JSX.Element {
   return (
