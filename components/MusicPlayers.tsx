@@ -92,6 +92,7 @@ function MusicPlayers({ tracks }): JSX.Element {
       } else {
         setTrackProgress(audioRef.current.currentTime);
       }
+      // @ts-ignore
     }, [1000]);
   };
 
@@ -207,11 +208,11 @@ function MusicPlayers({ tracks }): JSX.Element {
                   key={index}
                   data-key={index}
                   onClick={playlistSelectionHandler}
-                  className="flex items-center px-8 py-4 mx-10 mb-4 bg-white shadow-xl cursor-pointer rounded-xl bg-opacity-40 bg-clip-padding backdrop-blur-sm hover:bg-opacity-60"
+                  className="flex items-center px-8 py-1 mx-10 mb-4 bg-white shadow-xl cursor-pointer 2xl:py-4 rounded-xl bg-opacity-40 bg-clip-padding backdrop-blur-sm hover:bg-opacity-60"
                 >
                   <button
                     type="button"
-                    className="w-16 h-16 transition duration-150 ease-out group hover:scale-[1.2] text-[24px] text-white/40 hover:text-white/80"
+                    className="w-8 2xl:w-16 h-16 transition duration-150 ease-out group hover:scale-[1.2] text-[18px] 2xl:text-[24px] text-white/40 hover:text-white/80"
                   >
                     {trackIndex === index && isPlaying ? (
                       <i className="fas">&#xf04c;</i>
@@ -220,8 +221,8 @@ function MusicPlayers({ tracks }): JSX.Element {
                     )}
                   </button>
 
-                  <div className="w-0 h-10 ml-8 border border-solid border-white/60" />
-                  <h2 className="flex ml-5 text-xl font-bold grow text-white/60 font-raleway">
+                  <div className="w-0 h-10 ml-4 border border-solid 2xl:ml-8 border-white/60" />
+                  <h2 className="flex ml-5 text-lg font-bold 2xl:text-xl grow text-white/60 font-raleway">
                     {track.title}
                   </h2>
                   <p className="text-base font-bold text-white/60 font-PT_sans">
