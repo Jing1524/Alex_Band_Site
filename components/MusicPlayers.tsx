@@ -148,7 +148,7 @@ function MusicPlayers({ tracks }): JSX.Element {
                 onClick={() => toPrevTrack()}
                 className="text-[24px] text-white/40 hover:text-white/80"
               >
-                <i className="fas">&#xf04a;</i>
+                <i className="fas fa-backward" />
               </button>
               {isPlaying ? (
                 <button
