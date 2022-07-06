@@ -7,8 +7,8 @@ function Landing(): JSX.Element {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
   return (
-    <section className="w-[100vw] h-auto xl:-mt-28">
-      <div className=" w-[100%] h-[100%]">
+    <section className="xl:-mt-28">
+      <div className="w-[100%]">
         <Image
           src="/image/landing.jpg"
           layout="responsive"
