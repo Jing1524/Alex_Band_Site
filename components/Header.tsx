@@ -7,14 +7,16 @@ function Header(): JSX.Element {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
   return (
-    <section id="navbar" className="bg-black opacity-[88%] 2xl:bg-opacity-0">
-      <ul className="flex justify-center pt-10 pb-5 mr-0 space-x-10 2xl:mr-32">
+    <section
+      id="navbar"
+      className="bg-black opacity-[88%] xl:bg-opacity-0 relative z-50"
+    >
+      <div className="flex justify-center pt-10 pb-5 space-x-10 xl:justify-end xl:mr-32">
         <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
-          <li className="flex flex-col items-center nav-item 2xl:block">
+          <div className="flex flex-col items-center nav-item ">
             <a
               className="z-10 text-lg font-bold text-gray-200 lg:text-2xl font-raleway"
               href="#tracks"
-              onClick={() => setNavbarOpen(false)}
             >
               TRACKS
             </a>
@@ -26,14 +28,13 @@ function Header(): JSX.Element {
                 width={150}
               />
             </div>
-          </li>
+          </div>
         </motion.div>
         <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
-          <li className="flex flex-col items-center nav-item">
+          <div className="flex flex-col items-center nav-item">
             <a
               className="z-10 text-lg font-bold text-gray-200 lg:text-2xl font-raleway "
               href="#about"
-              onClick={() => setNavbarOpen(false)}
             >
               ABOUT
             </a>
@@ -45,15 +46,14 @@ function Header(): JSX.Element {
                 width={150}
               />
             </div>
-          </li>
+          </div>
         </motion.div>
 
         <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
-          <li className="flex flex-col items-center nav-item">
+          <div className="flex flex-col items-center nav-item">
             <a
               className="z-10 text-lg font-bold text-gray-200 lg:text-2xl font-raleway "
               href="#contact"
-              onClick={() => setNavbarOpen(false)}
             >
               CONTACT
             </a>
@@ -65,9 +65,9 @@ function Header(): JSX.Element {
                 width={150}
               />
             </div>
-          </li>
+          </div>
         </motion.div>
-      </ul>
+      </div>
 
       {/* <motion.div
         className=" w-[40px] h-auto max-w-[40px] hover:cursor-pointer"

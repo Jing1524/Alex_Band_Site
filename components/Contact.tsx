@@ -4,7 +4,7 @@ function Contact(): JSX.Element {
   return (
     <section
       id="contact"
-      className=" bg-gradient-to-r from-[#171717] to-black/90 flex flex-col flex-col-reverse xl:flex-row items-start space-x-10 py-16"
+      className=" bg-gradient-to-r from-[#171717] to-black/90 flex flex-col flex-col-reverse lg:flex-row items-start space-x-10 py-16"
     >
       <div className="w-[100vw] basis-3/5 pt-10">
         <Image
@@ -14,16 +14,16 @@ function Contact(): JSX.Element {
           width={1500}
         />
       </div>
-      <div className="flex flex-col items-start pl-6 xl:mt-8 xl:items-end space-y-14 basis-2/5">
+      <div className="flex flex-col items-start pl-6 xl:mt-8 lg:items-end space-y-14 basis-2/5">
         <div className="flex flex-col items-start lg:items-end">
-          <h1 className="mr-32 text-5xl uppercase 2xl:text-6xl text-white/60 text-semibold font-raleway">
+          <h1 className="mr-20 text-5xl uppercase 2xl:text-6xl text-white/60 text-semibold font-raleway">
             CONTACT
           </h1>
-          <div className="mt-5 border border-2 border-solid mr-[130px] border-white/60 w-80 " />
+          <div className="mt-5 mr-20 border border-2 border-solid border-white/60 w-80 " />
         </div>
 
-        <div className="flex flex-col mr-32 space-y-10">
-          <div className="flex flex-col items-start 2xl:items-end">
+        <div className="flex flex-col mr-20 space-y-10">
+          <div className="flex flex-col items-start lg:items-end">
             <h3 className="text-2xl 2xl:text-3xl text-white/60 font-raleway">
               RUSSELL KRANES
             </h3>
@@ -31,7 +31,7 @@ function Contact(): JSX.Element {
               1kranes@gmail.com
             </h3>
           </div>
-          <div className="flex flex-col items-start 2xl:items-end">
+          <div className="flex flex-col items-start lg:items-end">
             <h3 className="text-2xl 2xl:text-3xl text-white/60 font-raleway">
               RUSSELL KRANES
             </h3>
@@ -41,7 +41,7 @@ function Contact(): JSX.Element {
           </div>
         </div>
         {/* social media */}
-        <div className="flex mr-32 space-x-5 text-white/60">
+        <div className="flex mr-20 space-x-5 text-white/60">
           <button>
             <i className="fab text-[36px]">&#xf082;</i>
           </button>
