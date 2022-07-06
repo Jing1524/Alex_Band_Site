@@ -142,7 +142,7 @@ export default class MyDocument extends Document {
 
           <script
             src="https://kit.fontawesome.com/a076d05399.js"
-            crossOrigin="anonymous"
+            crossOrigin="true"
           />
           {/* GOOGLE ANALYTICS */}
 
