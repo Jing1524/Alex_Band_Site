@@ -15,6 +15,10 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
     </Head>
     <header>
       <Header />
