@@ -156,7 +156,13 @@ function MusicPlayers({ tracks }): JSX.Element {
                   onClick={() => setIsPlaying(false)}
                   className="w-16 h-16 transition duration-150 ease-out group hover:scale-[1.2] text-[24px] text-white/40 hover:text-white/80"
                 >
-                  <i className="fas">&#xf04c;</i>
+                  {/* <i className="fas">&#xf04c;</i> */}
+                  <Image
+                    src="/icon/play_button.svg"
+                    layout="responsive"
+                    height={16}
+                    width={16}
+                  />
                 </button>
               ) : (
                 <button
