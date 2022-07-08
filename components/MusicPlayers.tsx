@@ -142,38 +142,58 @@ function MusicPlayers({ tracks }): JSX.Element {
               {tracks[trackIndex].title}
             </h2>
 
-            <div className="flex items-center justify-center space-x-5">
+            <div className="flex items-center justify-center mt-6 space-x-6">
               <button
                 type="button"
                 onClick={() => toPrevTrack()}
-                className="text-[24px] text-white/40 hover:text-white/80"
+                className=" w-8 h-8 text-[24px] text-white/40 hover:text-white/80 hover:scale-[1.1]"
               >
-                <i className="fas">&#xf04a;</i>
+                <Image
+                  src="/icon/skip.svg"
+                  layout="responsive"
+                  height={8}
+                  width={8}
+                />
               </button>
               {isPlaying ? (
                 <button
                   type="button"
                   onClick={() => setIsPlaying(false)}
-                  className="w-16 h-16 transition duration-150 ease-out group hover:scale-[1.2] text-[24px] text-white/40 hover:text-white/80"
+                  className="w-8 h-8 transition duration-150 ease-out group hover:scale-[1.1] text-white/40 hover:text-white/80"
                 >
-                  <i className="fas">&#xf04c;</i>
+                  <Image
+                    src="/icon/pause.svg"
+                    layout="responsive"
+                    height={8}
+                    width={8}
+                  />
                 </button>
               ) : (
                 <button
                   type="button"
                   onClick={() => setIsPlaying(true)}
-                  className="w-16 h-16 transition duration-150 ease-out group hover:scale-[1.2] text-[24px] text-white/40 hover:text-white/80"
+                  className="w-8 h-8 transition duration-150 ease-out group hover:scale-[1.1] text-[24px] text-white/40 hover:text-white/80"
                 >
-                  <i className="fas">&#xf04b;</i>
+                  <Image
+                    src="/icon/play_button.svg"
+                    layout="responsive"
+                    height={8}
+                    width={8}
+                  />
                 </button>
               )}
 
               <button
                 type="button"
                 onClick={() => toNextTrack()}
-                className="text-[24px] text-white/40 hover:text-white/80"
+                className="w-8 h-8 rotate-180 text-[24px] text-white/40 hover:text-white/80 hover:scale-[1.1]"
               >
-                <i className="fas">&#xf04e;</i>
+                <Image
+                  src="/icon/skip.svg"
+                  layout="responsive"
+                  height={8}
+                  width={8}
+                />
               </button>
             </div>
 
@@ -208,16 +228,26 @@ function MusicPlayers({ tracks }): JSX.Element {
                   key={index}
                   data-key={index}
                   onClick={playlistSelectionHandler}
-                  className="flex items-center px-8 py-1 mx-10 mb-4 bg-white shadow-xl cursor-pointer 2xl:py-4 rounded-xl bg-opacity-40 bg-clip-padding backdrop-blur-sm hover:bg-opacity-60"
+                  className="flex items-center px-8 py-5 mx-10 mb-4 bg-white shadow-xl cursor-pointer 2xl:py-4 rounded-xl bg-opacity-40 bg-clip-padding backdrop-blur-sm hover:bg-opacity-60"
                 >
                   <button
                     type="button"
-                    className="w-8 2xl:w-16 h-16 transition duration-150 ease-out group hover:scale-[1.2] text-[18px] 2xl:text-[24px] text-white/40 hover:text-white/80"
+                    className="w-6 h-6 transition duration-150 ease-out group hover:scale-[1.2] text-[18px] 2xl:text-[24px] text-white/40 hover:text-white/80"
                   >
                     {trackIndex === index && isPlaying ? (
-                      <i className="fas">&#xf04c;</i>
+                      <Image
+                        src="/icon/pause.svg"
+                        layout="responsive"
+                        height={8}
+                        width={8}
+                      />
                     ) : (
-                      <i className="fas">&#xf04b;</i>
+                      <Image
+                        src="/icon/play_button.svg"
+                        layout="responsive"
+                        height={8}
+                        width={8}
+                      />
                     )}
                   </button>
 
