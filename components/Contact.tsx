@@ -42,11 +42,21 @@ function Contact(): JSX.Element {
         </div>
         {/* social media */}
         <div className="flex mr-20 space-x-5 text-white/60">
-          <button>
-            <i className="fab text-[36px]">&#xf082;</i>
+          <button className="w-8 h-8">
+            <Image
+              src="/icon/facebook.svg"
+              layout="responsive"
+              height={8}
+              width={8}
+            />
           </button>
-          <button>
-            <i className="fab text-[36px]">&#xf16d;</i>
+          <button className="w-8 h-8">
+            <Image
+              src="/icon/instagram.svg"
+              layout="responsive"
+              height={8}
+              width={8}
+            />
           </button>
         </div>
       </div>
