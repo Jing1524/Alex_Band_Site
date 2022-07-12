@@ -9,7 +9,7 @@ function MusicPlayers({ tracks }): JSX.Element {
   const [trackProgress, setTrackProgress] = useState(0);
   // can't run Audio API on server
   const audioRef = useRef(null);
-  console.log(audioRef.current.duration);
+
   //convert milliseconds to min and secs
 
   const calculateTime = (sec) => {
@@ -194,7 +194,7 @@ function MusicPlayers({ tracks }): JSX.Element {
                 value={trackProgress}
                 step="0.01"
                 min="0"
-                max={audioRef.current.duration}
+                max={audioRef?.current?.duration}
                 className=" progress w-[100%] mt-10 rounded-lg bg-red-300 inline"
                 onChange={(e) => onScrub(e.target.value)}
                 onMouseUp={onScrubEnd}
