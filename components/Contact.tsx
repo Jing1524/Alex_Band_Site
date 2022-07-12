@@ -14,7 +14,7 @@ function Contact(): JSX.Element {
           width={1500}
         />
       </div>
-      <div className="flex flex-col items-start pl-6 xl:mt-8 lg:items-end space-y-14 basis-2/5">
+      <div className="flex flex-col items-start lg:pl-6 xl:mt-8 lg:items-end space-y-14 basis-2/5">
         <div className="flex flex-col items-start lg:items-end">
           <h1 className="mr-20 text-5xl uppercase 2xl:text-6xl text-white/60 text-semibold font-raleway">
             CONTACT
@@ -42,7 +42,7 @@ function Contact(): JSX.Element {
         </div>
         {/* social media */}
         <div className="flex mr-20 space-x-5 text-white/60">
-          <button className="w-8 h-8">
+          <button className="w-[31px] h-[31px]">
             <Image
               src="/icon/facebook.svg"
               layout="responsive"

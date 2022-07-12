@@ -7,17 +7,8 @@ function MusicPlayers({ tracks }): JSX.Element {
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackIndex, setTrackIndex] = useState(0);
   const [trackProgress, setTrackProgress] = useState(0);
-
   // can't run Audio API on server
   const audioRef = useRef(null);
-
-  // useEffect(() => {
-  //   audioRef.current = new Audio(tracks[trackIndex].audioSrc);
-  //   console.log(audioRef?.current?.duration);
-  //   const seconds = Math.floor(audioRef.current.duration);
-
-  //   setDuration(seconds);
-  // }, [audioRef?.current?.onloadedata, audioRef?.current?.isReady]);
 
   //convert milliseconds to min and secs
 
@@ -134,10 +125,10 @@ function MusicPlayers({ tracks }): JSX.Element {
             width={1500}
           />
         </div> */}
-        <motion.div className=" w-full md:w-[85%] lg:w-[60%]">
+        <motion.div className="w-full md:w-[85%] lg:w-[60%]">
           {/* button control */}
 
-          <div className="p-8 mx-20">
+          <div className="p-8 lg:mx-20">
             <h2 className="text-xl font-bold text-center text-white/80 font-raleway">
               {tracks[trackIndex].title}
             </h2>
@@ -146,7 +137,7 @@ function MusicPlayers({ tracks }): JSX.Element {
               <button
                 type="button"
                 onClick={() => toPrevTrack()}
-                className=" w-8 h-8 text-[24px] text-white/40 hover:text-white/80 hover:scale-[1.1]"
+                className="w-6 h-6 lg:w-8 lg:h-8 text-[24px] text-white/40 hover:text-white/80 hover:scale-[1.1]"
               >
                 <Image
                   src="/icon/skip.svg"
@@ -159,7 +150,7 @@ function MusicPlayers({ tracks }): JSX.Element {
                 <button
                   type="button"
                   onClick={() => setIsPlaying(false)}
-                  className="w-8 h-8 transition duration-150 ease-out group hover:scale-[1.1] text-white/40 hover:text-white/80"
+                  className="w-6 h-6 lg:w-8 lg:h-8 transition duration-150 ease-out group hover:scale-[1.1] text-white/40 hover:text-white/80"
                 >
                   <Image
                     src="/icon/pause.svg"
@@ -172,7 +163,7 @@ function MusicPlayers({ tracks }): JSX.Element {
                 <button
                   type="button"
                   onClick={() => setIsPlaying(true)}
-                  className="w-8 h-8 transition duration-150 ease-out group hover:scale-[1.1] text-[24px] text-white/40 hover:text-white/80"
+                  className="w-6 h-6 lg:w-8 lg:h-8 transition duration-150 ease-out group hover:scale-[1.1] text-[24px] text-white/40 hover:text-white/80"
                 >
                   <Image
                     src="/icon/play_button.svg"
@@ -186,7 +177,7 @@ function MusicPlayers({ tracks }): JSX.Element {
               <button
                 type="button"
                 onClick={() => toNextTrack()}
-                className="w-8 h-8 rotate-180 text-[24px] text-white/40 hover:text-white/80 hover:scale-[1.1]"
+                className="w-6 h-6 lg:w-8 lg:h-8 rotate-180 text-[24px] text-white/40 hover:text-white/80 hover:scale-[1.1]"
               >
                 <Image
                   src="/icon/skip.svg"
@@ -196,14 +187,14 @@ function MusicPlayers({ tracks }): JSX.Element {
                 />
               </button>
             </div>
-
+            {console.log(typeof tracks[trackIndex].durationTime)}
             <div>
               <input
                 type="range"
                 value={trackProgress}
-                // step={0.1}
+                step="0.01"
                 min="0"
-                max={tracks[trackIndex].durationTime}
+                max={audioRef?.current?.duration}
                 className=" progress w-[100%] mt-10 rounded-lg bg-red-300 inline"
                 onChange={(e) => onScrub(e.target.value)}
                 onMouseUp={onScrubEnd}
@@ -232,7 +223,7 @@ function MusicPlayers({ tracks }): JSX.Element {
                 >
                   <button
                     type="button"
-                    className="w-6 h-6 transition duration-150 ease-out group hover:scale-[1.2] text-[18px] 2xl:text-[24px] text-white/40 hover:text-white/80"
+                    className="w-4 h-4 lg:w-6 lg:h-6 transition duration-150 ease-out group hover:scale-[1.2] text-[18px] 2xl:text-[24px] text-white/40 hover:text-white/80"
                   >
                     {trackIndex === index && isPlaying ? (
                       <Image
@@ -251,8 +242,8 @@ function MusicPlayers({ tracks }): JSX.Element {
                     )}
                   </button>
 
-                  <div className="w-0 h-10 ml-4 border border-solid 2xl:ml-8 border-white/60" />
-                  <h2 className="flex ml-5 text-lg font-bold 2xl:text-xl grow text-white/60 font-raleway">
+                  <div className="w-0 h-8 ml-5 border border-solid lg:h-10 lg:ml-4 2xl:ml-8 border-white/60" />
+                  <h2 className="flex ml-5 text-md lg:text-lg 2xl:text-xl grow text-white/60 font-raleway">
                     {track.title}
                   </h2>
                   <p className="text-base font-bold text-white/60 font-PT_sans">

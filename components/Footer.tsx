@@ -5,7 +5,7 @@ function Footer(): JSX.Element {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
         ultricies viverra convallis. Integer euismod gravida lacus
       </p>
-      <p className="mt-5 text-base text-white/60 font-raleway">
+      <p className="mx-5 mt-5 text-base text-center text-white/60 font-raleway">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </p>
     </section>
