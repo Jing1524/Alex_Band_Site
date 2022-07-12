@@ -9,9 +9,9 @@ type Props = {
 };
 
 const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <div>
+  <div className="overflow-x-hidden">
     <Head>
-      <title>Album Title</title>
+      <title>I Live Dreaming</title>
       <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />

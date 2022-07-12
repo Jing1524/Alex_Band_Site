@@ -18,7 +18,7 @@ export default [
     durationTime: "05:32",
   },
   {
-    title: "Giant Steps Minor",
+    title: "Anchor Points",
 
     audioSrc: "/tracks/Giant_Steps_Minor.mp3",
     durationTime: "07:42",
@@ -36,7 +36,7 @@ export default [
     durationTime: "05:58",
   },
   {
-    title: "EveryBody Else But You",
+    title: "Everybody Else But You",
 
     audioSrc: "/tracks/Everybody_Else_but_You.mp3",
     durationTime: "06:28",

@@ -219,7 +219,7 @@ function MusicPlayers({ tracks }): JSX.Element {
                   key={index}
                   data-key={index}
                   onClick={playlistSelectionHandler}
-                  className="flex items-center px-8 py-5 mx-10 mb-4 bg-white shadow-xl cursor-pointer 2xl:py-4 rounded-xl bg-opacity-40 bg-clip-padding backdrop-blur-sm hover:bg-opacity-60"
+                  className="flex items-center px-8 py-3 mx-3 mb-4 bg-white shadow-xl cursor-pointer lg:py-5 lg:mx-10 2xl:py-4 rounded-xl bg-opacity-40 bg-clip-padding backdrop-blur-sm hover:bg-opacity-60"
                 >
                   <button
                     type="button"
