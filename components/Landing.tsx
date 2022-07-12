@@ -17,14 +17,14 @@ function Landing(): JSX.Element {
         />
       </div>
 
-      <div className="flex flex-col items-end text-right pr-10 md:pr-20 py-20 bg-black opacity-[91%] xl:absolute xl:bg-opacity-0 xl:-mt-80 xl:items-start xl:ml-16">
-        <h1 className="text-5xl font-bold text-gray-200 md:text-6xl lg:text-6xl 2xl:text-8xl font-raleway">
+      <div className="flex flex-col items-end text-right pr-7 md:pr-20 py-10 bg-black opacity-[91%] xl:absolute xl:bg-opacity-0 xl:-mt-80 xl:items-start xl:ml-16">
+        <h1 className="text-4xl font-bold text-gray-200 md:text-6xl lg:text-6xl 2xl:text-8xl font-raleway">
           I LIVE DREAMING
         </h1>
         <p className="hidden mt-10 text-3xl text-gray-200 uppercase font-raleway xl:block">
           russell kranes, alex levine, sam weber, jay sawyer
         </p>
-        <div className="flex flex-col items-end mt-10 space-y-3 text-3xl text-gray-200 uppercase font-raleway xl:hidden">
+        <div className="flex flex-col items-end mt-10 space-y-3 text-2xl text-gray-200 uppercase font-raleway xl:hidden">
           <p>russell kranes</p>
           <p>alex levine</p>
           <p>sam weber</p>

@@ -11,7 +11,7 @@ function Header(): JSX.Element {
       id="navbar"
       className="bg-black opacity-[88%] xl:bg-opacity-0 relative z-50"
     >
-      <div className="flex justify-center pt-10 pb-5 space-x-10 xl:justify-end xl:mr-32">
+      <div className="flex justify-center pt-10 pb-5 space-x-3 lg:space-x-10 xl:justify-end xl:mr-32">
         <motion.div className="z-10 group" whileHover={{ scale: 1.1 }}>
           <div className="flex flex-col items-center nav-item ">
             <a

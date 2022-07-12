@@ -4,9 +4,9 @@ function About(): JSX.Element {
   return (
     <section
       id="about"
-      className="bg-gradient-to-r from-[#171717] to-black/90 flex flex-col lg:flex-row items-center space-x-0 2xl:space-x-10 pt-24"
+      className="bg-gradient-to-r from-[#171717] to-black/90 flex flex-col lg:flex-row items-center space-x-0 2xl:space-x-10 pt-20 lg:pt-24"
     >
-      <div className="flex flex-col ml-16 basis-1/2">
+      <div className="flex flex-col ml-10 lg:ml-16 basis-1/2">
         <h1 className="text-5xl uppercase text-white/60 2xl:text-6xl text-bold font-raleway">
           about the project
         </h1>
