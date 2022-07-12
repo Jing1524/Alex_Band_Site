@@ -8,7 +8,7 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 
 const IndexPage = () => (
-  <Layout title="Home | Album Title">
+  <Layout title="Home | I Live Dreaming">
     <Landing />
     <MusicPlayers tracks={tracks} />
     <About />
