@@ -17,7 +17,7 @@ function Landing(): JSX.Element {
         />
       </div>
 
-      <div className="flex flex-col items-end text-right pr-7 md:pr-20 py-10 bg-black opacity-[91%] xl:absolute xl:bg-opacity-0 xl:-mt-80 xl:items-start xl:ml-16">
+      <div className="flex flex-col items-end text-right pr-7 md:pr-20 py-10 bg-black opacity-[91%] xl:bg-opacity-0 xl:items-start xl:ml-16 xl:-mt-[500px]">
         <h1 className="text-4xl font-bold text-gray-200 md:text-6xl lg:text-6xl 2xl:text-8xl font-raleway">
           I LIVE DREAMING
         </h1>
