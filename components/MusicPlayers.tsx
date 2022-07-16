@@ -114,7 +114,7 @@ function MusicPlayers({ tracks }): JSX.Element {
   return (
     <section
       id="tracks"
-      className="bg-gradient-to-r from-[#171717] to-black/90 py-16"
+      className="bg-gradient-to-r from-[#171717] to-black/90 py-16 xl:pt-[300px]"
     >
       <div className="flex items-end justify-center">
         {/* <div className="w-[50vw] mb-4">
